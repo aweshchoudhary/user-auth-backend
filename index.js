@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: ["https://csb-1npiyo.netlify.app", "https://1npiyo.csb.app", "https://user-auth0.netlify.app/"],
+    origin: ["https://csb-1npiyo.netlify.app", "https://1npiyo.csb.app", "https://user-auth0.netlify.app"],
     credentials: true
   })
 );
