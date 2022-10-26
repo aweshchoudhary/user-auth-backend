@@ -127,10 +127,11 @@ const logout = (req, res) => {
 };
 
 const update = async (req, res) => {
-  const { query, password, username } = req.body;
+  const { query} = req.body;
+  const {username} = req.user;
   try {
     if (query?.password) {
-      const comparePwd = await pwdCompare(password);
+      const comparePwd = await pwdCompare(query.oldpassword);
       if (!comparePwd)
         return res.status(400).json({ message: "Wrong Password" });
       await User.findOneAndUpdate({ username }, { $set: { ...query } });
