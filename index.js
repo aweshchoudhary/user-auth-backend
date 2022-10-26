@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
     origin: ["https://csb-1npiyo.netlify.app", "https://1npiyo.csb.app"],
-    credentials: true
+    credentials: true,
   })
 );
 
@@ -24,7 +24,7 @@ app.use(
   session({
     secret: process.env.JWT_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
   })
 );
 app.use(cookie());
